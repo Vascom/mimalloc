@@ -1,9 +1,14 @@
+From 56a295d39915381d908bda0aa7c19754fe4b9792 Mon Sep 17 00:00:00 2001
+From: Yaroslav Syrytsia <me@ys.lc>
+Date: Tue, 28 Sep 2021 20:34:56 +0300
+Subject: [PATCH] cmake: removed hardcoded names for top level configuration
+
 ---
  CMakeLists.txt | 7 ++++---
  1 file changed, 4 insertions(+), 3 deletions(-)
- 
+
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index a5f3288..963d1b0 100644
+index a5f32884..56335820 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
 @@ -24,6 +24,7 @@ option(MI_DEBUG_UBSAN       "Build with undefined-behavior sanitizer (needs clan
@@ -27,6 +32,3 @@ index a5f3288..963d1b0 100644
  else()
    set(mi_install_libdir   "lib/mimalloc-${mi_version}")
    set(mi_install_incdir   "include/mimalloc-${mi_version}")
--- 
-2.31.1
-

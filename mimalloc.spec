@@ -1,13 +1,14 @@
-%define __cmake_in_source_build 0
+%undefine __cmake_in_source_build
 
 Name:           mimalloc
 Version:        2.0.2
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        A general purpose allocator with excellent performance
 
 License:        MIT
 URL:            https://github.com/microsoft/mimalloc
 Source0:        %{url}/releases/download/v%{version}/%{name}-%{version}.tar.gz
+# https://github.com/microsoft/mimalloc/pull/463
 Patch0:         mimalloc-install-dirs.patch
 
 BuildRequires:  cmake
@@ -35,12 +36,13 @@ Development package for mimalloc.
     -DMI_OVERRIDE=OFF \
     -DMI_INSTALL_TOPLEVEL=ON \
     -DMI_BUILD_STATIC=OFF \
-    -DMI_BUILD_TESTS=OFF
-%make_build
+    -DMI_BUILD_TESTS=OFF \
+    -DCMAKE_BUILD_TYPE=Release
+%cmake_build
 
 
 %install
-%make_install
+%cmake_install
 
 
 %files
@@ -55,5 +57,8 @@ Development package for mimalloc.
 
 
 %changelog
+* Wed Sep 29 2021 Vasiliy Glazov <vascom2@gmail.com> - 2.0.2-2
+- Clean spec to follow packaging guidelines
+
 * Wed Sep 29 2021 Vasiliy Glazov <vascom2@gmail.com> - 2.0.2-1
 - Initial packaging for Fedora
