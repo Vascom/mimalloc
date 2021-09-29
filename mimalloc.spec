@@ -7,7 +7,7 @@ Summary:        A general purpose allocator with excellent performance
 
 License:        MIT
 URL:            https://github.com/microsoft/mimalloc
-Source0:        %{url}/releases/download/v%{version}/%{name}-%{version}.tar.gz
+Source0:        %{url}/archive/v%{version}/%{name}-%{version}.tar.gz
 # https://github.com/microsoft/mimalloc/pull/463
 Patch0:         mimalloc-install-dirs.patch
 
