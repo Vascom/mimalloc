@@ -28,6 +28,8 @@ Development package for mimalloc.
 
 %prep
 %autosetup -p1
+# Remove unneded binary from sources
+rm -rf bin
 
 
 %build
